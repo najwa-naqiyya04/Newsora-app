@@ -1,20 +1,40 @@
 import 'package:flutter/cupertino.dart' show CupertinoPageTransitionsBuilder;
 import 'package:flutter/material.dart';
 
-/// Tema Material 3 berbasis satu seed color (dynamic tonal palette).
+/// Tema Material 3 dengan paduan biru (utama) dan merah (aksen) dari logo Newsora.
 class AppTheme {
   AppTheme._();
 
-  static const Color _seed = Color(0xFF1F5FA8);
+  static const Color brandBlue = Color(0xFF003380);
+  static const Color brandRed = Color(0xFFE60019);
 
   static ThemeData light() => _build(Brightness.light);
   static ThemeData dark() => _build(Brightness.dark);
 
-  static ThemeData _build(Brightness brightness) {
-    final scheme = ColorScheme.fromSeed(
-      seedColor: _seed,
+  /// Biru = primary, merah = secondary (aksen).
+  static ColorScheme _scheme(Brightness brightness) {
+    final blue = ColorScheme.fromSeed(
+      seedColor: brandBlue,
       brightness: brightness,
     );
+    final red = ColorScheme.fromSeed(
+      seedColor: brandRed,
+      brightness: brightness,
+    );
+    final isLight = brightness == Brightness.light;
+
+    return blue.copyWith(
+      primary: isLight ? brandBlue : blue.primary,
+      onPrimary: isLight ? Colors.white : blue.onPrimary,
+      secondary: isLight ? brandRed : red.primary,
+      onSecondary: isLight ? Colors.white : red.onPrimary,
+      secondaryContainer: red.primaryContainer,
+      onSecondaryContainer: red.onPrimaryContainer,
+    );
+  }
+
+  static ThemeData _build(Brightness brightness) {
+    final scheme = _scheme(brightness);
     final base = ThemeData(useMaterial3: true, colorScheme: scheme);
     final text = base.textTheme;
 
