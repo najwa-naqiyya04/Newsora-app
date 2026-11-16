@@ -1,28 +1,25 @@
-# Warta News App - Starter Project
+# 📰 Newsora – News Application
 
-Selamat datang di repositori Starter untuk pembuatan aplikasi **Warta**. Proyek ini digunakan sebagai _Project-Based Learning_ (PBL) bagi siswi SMK untuk mempelajari pembuatan aplikasi dengan framework Flutter.
+Newsora is a modern mobile news application built with Flutter and powered by REST API integration. It provides access to the latest news from various sources, offering a simple and comfortable reading experience with a clean and user-friendly interface.
 
-Repositori ini hanya berisi kerangka awal aplikasi, yang mana logika aplikasinya (API, State Management) telah dikosongkan. 
+## ✨ Features
 
-## 🚀 Persiapan Awal
-1. Clone repositori ini.
-2. Buka proyek menggunakan VS Code atau Android Studio.
-3. Buka terminal, pastikan berada di folder proyek ini, lalu jalankan:
-   ```bash
-   flutter pub get
-   ```
-4. Ubah nama file `.env.example` menjadi `.env`.
-5. Ikuti **Modul Pembelajaran** yang telah diberikan oleh Trainer/Pengajar-mu.
+- **News Feed:** Fetch and display the latest news using REST API.
+- **Search News:** Find articles based on specific keywords.
+- **Bookmark:** Save interesting articles for later reading.
+- **Light & Dark Mode:** Switch between themes for a comfortable reading experience.
 
-## 📁 Struktur Pengerjaan
-Kamu akan diinstruksikan oleh Trainer untuk mengisi file-file berikut secara bertahap:
-- `lib/data/models/article.dart`
-- `lib/core/constants/api_constants.dart`
-- `lib/data/services/news_api_service.dart`
-- `lib/data/repositories/news_repository.dart`
-- `lib/providers/...` (Semua file di folder ini)
-- Dan menyambungkan UI dengan State Management (`Riverpod`).
+## 🛠️ Built With
 
-Terdapat banyak komentar bertuliskan `// TODO:` di dalam kode. Ikuti panduan modul dan kerjakan TODO tersebut langkah demi langkah.
+- Flutter
+- Dart
+- REST API
+- HTTP
 
-Semangat belajar dan Happy Coding! 🚀
+## 🎯 Purpose
+
+Newsora was developed as a mobile application project to explore API integration, asynchronous data fetching, and modern mobile application development using Flutter.
+
+---
+
+**Newsora – Discover More, Stay Informed.**
